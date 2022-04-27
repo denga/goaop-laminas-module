@@ -1,6 +1,7 @@
 #!/usr/bin/env php
 <?php
 
+    use Composer\InstalledVersions;
     use Go\Core\AspectKernel;
     use Go\Laminas\Framework\Console\Command\WarmupCommand;
     use Symfony\Component\Console\Application;
@@ -27,7 +28,7 @@ if (!class_exists('Symfony\Component\Console\Application')) {
 }
 
 
-$app = new Application('Go! AOP', AspectKernel::VERSION);
+$app = new Application('Go! AOP', InstalledVersions::getVersion('goaop/framework'));
 $app->add(new WarmupCommand());
 $app->run();
 
