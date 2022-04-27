@@ -112,6 +112,8 @@ EOT
         }
 
         $output->writeln('<info>Done</info>');
+
+        return Command::SUCCESS;
     }
 
 }
